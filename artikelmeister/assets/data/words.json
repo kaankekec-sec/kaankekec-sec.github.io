@@ -1,0 +1,152 @@
+[
+  {
+    "noun": "Tisch",
+    "article": "der",
+    "en": "table"
+  },
+  {
+    "noun": "Stuhl",
+    "article": "der",
+    "en": "chair"
+  },
+  {
+    "noun": "Hund",
+    "article": "der",
+    "en": "dog"
+  },
+  {
+    "noun": "Apfel",
+    "article": "der",
+    "en": "apple"
+  },
+  {
+    "noun": "Garten",
+    "article": "der",
+    "en": "garden"
+  },
+  {
+    "noun": "Bahnhof",
+    "article": "der",
+    "en": "train station"
+  },
+  {
+    "noun": "Käse",
+    "article": "der",
+    "en": "cheese"
+  },
+  {
+    "noun": "Schlüssel",
+    "article": "der",
+    "en": "key"
+  },
+  {
+    "noun": "Baum",
+    "article": "der",
+    "en": "tree"
+  },
+  {
+    "noun": "Regen",
+    "article": "der",
+    "en": "rain"
+  },
+  {
+    "noun": "Lampe",
+    "article": "die",
+    "en": "lamp"
+  },
+  {
+    "noun": "Katze",
+    "article": "die",
+    "en": "cat"
+  },
+  {
+    "noun": "Tür",
+    "article": "die",
+    "en": "door"
+  },
+  {
+    "noun": "Straße",
+    "article": "die",
+    "en": "street"
+  },
+  {
+    "noun": "Uhr",
+    "article": "die",
+    "en": "clock"
+  },
+  {
+    "noun": "Blume",
+    "article": "die",
+    "en": "flower"
+  },
+  {
+    "noun": "Zeitung",
+    "article": "die",
+    "en": "newspaper"
+  },
+  {
+    "noun": "Schule",
+    "article": "die",
+    "en": "school"
+  },
+  {
+    "noun": "Küche",
+    "article": "die",
+    "en": "kitchen"
+  },
+  {
+    "noun": "Stadt",
+    "article": "die",
+    "en": "city"
+  },
+  {
+    "noun": "Buch",
+    "article": "das",
+    "en": "book"
+  },
+  {
+    "noun": "Haus",
+    "article": "das",
+    "en": "house"
+  },
+  {
+    "noun": "Fenster",
+    "article": "das",
+    "en": "window"
+  },
+  {
+    "noun": "Wasser",
+    "article": "das",
+    "en": "water"
+  },
+  {
+    "noun": "Brot",
+    "article": "das",
+    "en": "bread"
+  },
+  {
+    "noun": "Auto",
+    "article": "das",
+    "en": "car"
+  },
+  {
+    "noun": "Kind",
+    "article": "das",
+    "en": "child"
+  },
+  {
+    "noun": "Bett",
+    "article": "das",
+    "en": "bed"
+  },
+  {
+    "noun": "Handy",
+    "article": "das",
+    "en": "mobile phone"
+  },
+  {
+    "noun": "Fahrrad",
+    "article": "das",
+    "en": "bicycle"
+  }
+]

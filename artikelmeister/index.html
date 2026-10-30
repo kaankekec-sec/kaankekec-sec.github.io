@@ -1,1 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArtikelMeister – flashcards for der, die, das</title>
+  <meta name="description" content="ArtikelMeister is a free, open-source flashcard app for German noun articles. Spaced repetition, an AI word generator, CSV import and Google Drive backup. For Android and macOS.">
+  <!-- Absolute URLs: base comes from site.config.json; change via tools/set-base-url.py -->
+  <link rel="canonical" href="https://kaankekec-sec.github.io/artikelmeister/">
+  <meta name="theme-color" content="#19221f">
+  <!-- <meta name="google-site-verification" content=""> -->
 
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ArtikelMeister">
+  <meta property="og:title" content="ArtikelMeister – stop guessing der, die, das">
+  <meta property="og:description" content="A free, open-source flashcard app for German noun articles. For Android and macOS.">
+  <meta property="og:url" content="https://kaankekec-sec.github.io/artikelmeister/">
+  <meta property="og:image" content="https://kaankekec-sec.github.io/artikelmeister/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Three index cards reading der Tisch, die Lampe and das Buch, next to the ArtikelMeister app icon.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ArtikelMeister – stop guessing der, die, das">
+  <meta name="twitter:description" content="A free, open-source flashcard app for German noun articles. For Android and macOS.">
+  <meta name="twitter:image" content="https://kaankekec-sec.github.io/artikelmeister/assets/img/og-image.png">
+  <meta name="twitter:image:alt" content="Three index cards reading der Tisch, die Lampe and das Buch, next to the ArtikelMeister app icon.">
+
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" href="assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>(function(){var d=document.documentElement;if(location.protocol==='file:')return;d.classList.add('js');setTimeout(function(){if(!window.__amReady)d.classList.add('no-reveal');},1200);})();</script>
+  <script type="application/ld+json" id="ld">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ArtikelMeister",
+  "description": "Open-source flashcard app for learning German noun articles (der, die, das) with spaced repetition, an AI word generator and CSV import.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Android, macOS",
+  "url": "https://kaankekec-sec.github.io/artikelmeister/",
+  "downloadUrl": "https://github.com/kaankekec-sec/artikelmeister/releases",
+  "license": "https://opensource.org/licenses/MIT",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Kaan",
+    "url": "https://github.com/kaankekec-sec"
+  }
+}
+  </script>
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="ArtikelMeister home">
+        <img src="assets/img/logo-96.png" width="34" height="34" alt="">
+        <span>ArtikelMeister</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <ul>
+          <li class="nav-optional"><a href="#how">How it works</a></li>
+          <li class="nav-optional"><a href="#demo">Try it</a></li>
+          <li class="nav-optional"><a href="#faq">FAQ</a></li>
+          <li><a class="nav-cta" href="#download">Download</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div>
+          <h1 id="hero-title">Tired of guessing <span class="art" lang="de"><span class="g-der">der</span>, <span class="g-die">die</span>, <span class="g-das">das</span></span>? So was I, so I made an app for it.</h1>
+          <p class="lede reveal" style="--i:1">ArtikelMeister is a free flashcard app for German noun articles. It shows you every word with its article and brings it back right before you'd forget it, until <strong lang="de">die Lampe</strong> just sounds right. For Android and macOS, made for Turkish speakers.</p>
+          <div class="hero-actions reveal" style="--i:2">
+            <a class="btn btn-primary" href="#download">Download for free</a>
+            <a class="btn btn-ghost" href="#demo">Try the quiz</a>
+          </div>
+          <p class="hero-note reveal" style="--i:3">Open source under the MIT license. No account needed to study.</p>
+        </div>
+
+        <div class="card-stage" aria-hidden="true" data-parallax="-0.05">
+          <div class="index-card index-card--back b1" data-parallax="0.04"></div>
+          <div class="index-card index-card--back b2"></div>
+          <div class="index-card hero-card" data-hero-card>
+            <span class="card-tag">A1 Temel</span>
+            <div class="card-face">
+              <p class="card-word" lang="de"><span class="slot is-filled a-der" data-hero-slot>der</span> <span data-hero-noun>Tisch</span></p>
+              <p class="card-meaning"><span lang="tr" data-hero-tr>masa</span> (<span data-hero-en>table</span>)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem -->
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="wrap split">
+        <div class="prose-block">
+          <h2 id="problem-title" class="reveal">Spoon, fork, knife. Three genders.</h2>
+          <p class="lead reveal">German gives every noun a gender, and the gender rarely has anything to do with the thing.</p>
+          <p class="reveal">The girl is neuter: <strong lang="de">das Mädchen</strong>. The sun is feminine and the moon is masculine: <strong lang="de">die Sonne</strong>, <strong lang="de">der Mond</strong>. There are patterns, and every pattern has a queue of exceptions behind it.</p>
+          <p class="reveal">So you guess. In the exam, in the email to your landlord, at the bakery counter. The fix is boring and it works: see each noun with its article, again and again, at the right moments.</p>
+        </div>
+        <div>
+          <ul class="trio" lang="de" data-stagger role="list">
+            <li class="trio-item g-der reveal"><span class="w">der <span class="noun">Löffel</span></span><span class="t" lang="en">spoon, <span lang="tr">kaşık</span></span></li>
+            <li class="trio-item g-die reveal"><span class="w">die <span class="noun">Gabel</span></span><span class="t" lang="en">fork, <span lang="tr">çatal</span></span></li>
+            <li class="trio-item g-das reveal"><span class="w">das <span class="noun">Messer</span></span><span class="t" lang="en">knife, <span lang="tr">bıçak</span></span></li>
+          </ul>
+          <div class="aside-quote reveal">
+            <img src="assets/img/logo-96.png" width="56" height="56" alt="The ArtikelMeister app icon: a red brain dripping like it is bleeding">
+            <p><strong>About the icon.</strong> It's a bleeding brain, because remembering articles hurts. That's the whole design brief.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features overview -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap split">
+        <div class="features-sticky">
+          <h2 id="features-title" class="reveal" style="font-size:var(--step-4);margin-bottom:1.5rem">What it does</h2>
+          <div class="readme-note reveal" style="--i:1">
+            <span class="file">README.md</span>
+            <ul>
+              <li>smart repetition system</li>
+              <li>google drive sync with your google account</li>
+              <li>ai generator</li>
+              <li>could be used offline</li>
+              <li>csv file support to import custom words</li>
+            </ul>
+          </div>
+          <p class="readme-caption reveal" style="--i:2">The feature list, straight from the README. The rest of this page is the long version.</p>
+        </div>
+        <ul class="feature-list" data-stagger>
+          <li class="reveal"><a href="#how"><h3>Smart repetition</h3><p>Words you know fade into the background. Words you keep missing come back until they stick.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#ai"><h3>AI word generator</h3><p>Ask Gemini for new nouns at your level, from A1 to C1, without repeats.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#offline"><h3>Works offline</h3><p>Study on a train with no signal. Your cards live on your device.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#backup"><h3>Google Drive backup</h3><p>Sign in once and a backup in your own Drive keeps itself up to date.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#csv"><h3>CSV import</h3><p>Bring the vocabulary list from your course as a spreadsheet.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="split">
+          <div class="prose-block">
+            <h2 id="how-title" class="reveal">Spaced repetition, minus the jargon</h2>
+            <p class="lead reveal">Your memory forgets on a schedule. ArtikelMeister reviews on a schedule too, just a little ahead of it.</p>
+            <p class="reveal">The scheduler is inspired by SM-2, the classic algorithm that Anki also grew out of. You don't need to know any of that to use it.</p>
+          </div>
+          <ol class="steps" data-stagger>
+            <li class="reveal">
+              <h3>You see a noun without its article</h3>
+              <p><span lang="de">___ Tisch?</span> Say it in your head, then flip the card.</p>
+            </li>
+            <li class="reveal">
+              <h3>You rate how it went</h3>
+              <p>Four buttons, in Turkish like the rest of the app:</p>
+              <ul class="ratings" lang="tr" role="list">
+                <li>Tekrar <span lang="en">(again)</span></li>
+                <li>Zor <span lang="en">(hard)</span></li>
+                <li>İyi <span lang="en">(good)</span></li>
+                <li>Kolay <span lang="en">(easy)</span></li>
+              </ul>
+            </li>
+            <li class="reveal">
+              <h3>The app picks the next date</h3>
+              <p>Missed it? It's back in 30 seconds. Knew it? It waits longer every time.</p>
+            </li>
+            <li class="reveal">
+              <h3>You only study what's due</h3>
+              <p>Each day you get the cards that are due, plus new ones when you ask for them. Show up daily and your streak grows.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="interval-chart reveal" role="group" aria-labelledby="chart-title">
+          <h3 id="chart-title">One new card, answered “İyi” (good) every time</h3>
+          <p class="sub">The wait before each next review. Every gap is roughly two and a half times the last.</p>
+          <ol class="track" role="list">
+            <li class="tick" style="--x:0%"><strong>5 min</strong>after #1</li>
+            <li class="tick" style="--x:20%"><strong>1 day</strong>after #2</li>
+            <li class="tick" style="--x:40%"><strong>3 days</strong>after #3</li>
+            <li class="tick" style="--x:60%"><strong>8 days</strong>after #4</li>
+            <li class="tick" style="--x:80%"><strong>20 days</strong>after #5</li>
+            <li class="tick" style="--x:100%"><strong>50 days</strong>after #6</li>
+          </ol>
+          <p class="chart-foot">Six good answers in, <span lang="de">der Tisch</span> leaves you alone for almost two months.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI generator -->
+    <section class="section" id="ai" aria-labelledby="ai-title">
+      <div class="wrap split split--flip split--center">
+        <div class="prose-block">
+          <h2 id="ai-title" class="reveal">Out of words? Ask Gemini for more.</h2>
+          <p class="lead reveal">Pick a level from A1 to C1 and how many words you want. ArtikelMeister asks Google's Gemini for nouns with their article and Turkish meaning, and adds them to your deck.</p>
+          <p class="reveal">It sends along the words you already have, so you don't get <span lang="de">Tisch</span> for the fifth time. You can also give it a topic, like food or work.</p>
+          <p class="reveal">Sign in with your Google account or paste your own Gemini API key. <strong>The generator needs internet. Studying doesn't.</strong></p>
+        </div>
+        <div class="mock reveal" data-parallax="0.03">
+          <dl class="mock-head">
+            <div><dt>Level</dt><dd>B1</dd></div>
+            <div><dt>Words</dt><dd>5</dd></div>
+            <div><dt>Topic</dt><dd lang="de">Arbeit</dd></div>
+            <div><dt>Skipping</dt><dd>214 words you have</dd></div>
+          </dl>
+          <ul class="mock-list" role="list">
+            <li><span class="w" lang="de"><span class="g-der">der</span> Vertrag</span><span class="m" lang="tr">sözleşme</span></li>
+            <li><span class="w" lang="de"><span class="g-die">die</span> Erfahrung</span><span class="m" lang="tr">deneyim</span></li>
+            <li><span class="w" lang="de"><span class="g-das">das</span> Gehalt</span><span class="m" lang="tr">maaş</span></li>
+            <li><span class="w" lang="de"><span class="g-die">die</span> Besprechung</span><span class="m" lang="tr">toplantı</span></li>
+            <li><span class="w" lang="de"><span class="g-der">der</span> Feierabend</span><span class="m" lang="tr">mesai bitimi</span></li>
+          </ul>
+          <p class="mock-foot">An example of what one request can bring back.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offline + privacy -->
+    <section class="section" id="offline" aria-labelledby="offline-title">
+      <div class="wrap split">
+        <div class="prose-block">
+          <h2 id="offline-title" class="reveal">Works with zero bars of signal</h2>
+          <p class="lead reveal">Your words, decks and progress live on your device. Studying needs no internet and no account.</p>
+          <p class="reveal">No analytics, no ads, no tracking. Not in the app, and not on this website either. The details are in the <a href="privacy.html">privacy policy</a>.</p>
+        </div>
+        <div class="ledger" data-stagger>
+          <section class="stays reveal" aria-labelledby="stays-title">
+            <h3 id="stays-title">Stays on your device</h3>
+            <ul>
+              <li><strong>Your words and decks</strong>, including the ones you import</li>
+              <li><strong>Your progress</strong>: review dates, ratings, streak</li>
+              <li><strong>Your settings</strong></li>
+            </ul>
+          </section>
+          <section class="leaves reveal" aria-labelledby="leaves-title">
+            <h3 id="leaves-title">Goes online only if you use it</h3>
+            <ul>
+              <li><strong>AI requests</strong> go to Google Gemini</li>
+              <li><strong>Your backup</strong> goes to your own Google Drive, once you connect Google</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Drive backup -->
+    <section class="section" id="backup" aria-labelledby="backup-title">
+      <div class="wrap split split--flip split--center">
+        <div class="prose-block">
+          <h2 id="backup-title" class="reveal">A backup in your own Google Drive</h2>
+          <p class="lead reveal">Sign in with Google and ArtikelMeister keeps a backup of your cards in your Drive.</p>
+          <p class="reveal">Change something in the app and the backup updates on its own. No “export” button to remember. It's a file in your Drive, so it stays yours.</p>
+        </div>
+        <ol class="backup-strip" data-stagger role="list">
+          <li class="event reveal"><span class="dot" aria-hidden="true"></span><p><strong>You add <span lang="de">die Lampe</span></strong>to the deck <span lang="tr">A1 Temel</span></p></li>
+          <li class="event event--done reveal"><span class="dot" aria-hidden="true"></span><p><strong>Backup updated</strong>in your Google Drive, automatically</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CSV import -->
+    <section class="section" id="csv" aria-labelledby="csv-title">
+      <div class="wrap split">
+        <div class="prose-block">
+          <h2 id="csv-title" class="reveal">Bring your own word list</h2>
+          <p class="lead reveal">Got a vocabulary list from your course? Put it in a spreadsheet, save it as CSV and import it.</p>
+          <p class="reveal">One row per word. Commas, semicolons or tabs all work. If a file looks wrong, the import stops before it touches your existing words.</p>
+          <ul class="csv-cols reveal" role="list">
+            <li><code>artikel</code><span><span lang="de">der</span>, <span lang="de">die</span> or <span lang="de">das</span></span></li>
+            <li><code>kelime</code><span>the German word</span></li>
+            <li><code>anlam</code><span>its meaning</span></li>
+            <li><code>deste</code><span>deck name (optional)</span></li>
+          </ul>
+        </div>
+        <figure class="csv reveal" data-parallax="0.03">
+          <figcaption><span>examplesheet.csv</span><span>sample file from the repo</span></figcaption>
+<pre tabindex="0" role="region" aria-label="Sample CSV file"><span class="h">artikel,kelime,anlam,deste</span>
+<span class="g-der">der</span>,Tisch,Masa,A1 Temel
+<span class="g-die">die</span>,Katze,Kedi,A1 Temel
+<span class="g-das">das</span>,Buch,Kitap,A1 Temel
+<span class="g-der">der</span>,Stuhl,Sandalye,A1 Temel</pre>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section" id="screenshots" aria-labelledby="shots-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="shots-title" class="reveal">Screenshots</h2>
+          <p class="reveal">Real screenshots are on their way. Until then, the frames are keeping their seats warm.</p>
+        </div>
+      </div>
+      <div class="gallery reveal" data-gallery>
+        <div class="gallery-track" data-gallery-track tabindex="0" role="region" aria-roledescription="carousel" aria-label="App screenshots">
+          <div class="gallery-slide" role="group" aria-roledescription="slide" aria-label="1 of 5: Studying a deck"><figure style="margin:0"><div class="device device--phone"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Screenshot coming soon</span></div></div></div><figcaption><strong>Studying a deck</strong>Android</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Word list"><figure style="margin:0"><div class="device device--desktop"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Screenshot coming soon</span></div></div></div><figcaption><strong>Word list</strong>macOS</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: AI word generator"><figure style="margin:0"><div class="device device--phone"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Screenshot coming soon</span></div></div></div><figcaption><strong>AI word generator</strong>Android</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Studying a deck"><figure style="margin:0"><div class="device device--desktop"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Screenshot coming soon</span></div></div></div><figcaption><strong>Studying a deck</strong>macOS</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: CSV import"><figure style="margin:0"><div class="device device--phone"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Screenshot coming soon</span></div></div></div><figcaption><strong>CSV import</strong>Android</figcaption></figure></div>
+        </div>
+        <div class="wrap">
+          <div class="gallery-controls" data-gallery-controls hidden>
+            <button class="icon-btn" type="button" data-gallery-prev aria-label="Previous screenshot">
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </button>
+            <button class="icon-btn" type="button" data-gallery-next aria-label="Next screenshot">
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </button>
+            <p class="gallery-status" data-gallery-status aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap demo">
+        <div class="prose-block">
+          <h2 id="demo-title" class="reveal"><span lang="de">Der, die</span> or <span lang="de">das</span>?</h2>
+          <p class="lead reveal">Thirty everyday nouns. Pick an article and see if you're right.</p>
+          <p class="reveal">Miss one and it comes back a few cards later. That's a tiny version of what the app does with your whole deck, over days instead of seconds.</p>
+          <p class="demo-hint reveal">Keys <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> pick <span lang="de">der, die, das</span>. <kbd>Enter</kbd> goes to the next word.</p>
+        </div>
+
+        <div class="demo-panel reveal" data-demo>
+          <div class="demo-card" data-demo-card>
+            <div class="index-card">
+              <span class="card-tag">Quiz</span>
+              <div class="card-face">
+                <p class="card-word" lang="de"><span class="slot is-filled a-der" data-demo-slot aria-hidden="true">der</span> <span data-demo-noun>Tisch</span></p>
+                <p class="card-meaning" data-demo-en>table</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="choices" role="group" aria-label="Choose the article">
+            <button class="choice" type="button" data-article="der" lang="de" disabled>der<span class="key" aria-hidden="true">1</span></button>
+            <button class="choice" type="button" data-article="die" lang="de" disabled>die<span class="key" aria-hidden="true">2</span></button>
+            <button class="choice" type="button" data-article="das" lang="de" disabled>das<span class="key" aria-hidden="true">3</span></button>
+          </div>
+
+          <div class="demo-feedback">
+            <p data-demo-feedback aria-live="polite" aria-atomic="true"></p>
+            <button class="btn btn-ghost demo-next" type="button" data-demo-next hidden>Next word</button>
+          </div>
+
+          <div class="scoreboard">
+            <dl>
+              <div><dt>Correct</dt><dd data-demo-correct>0</dd></div>
+              <div><dt>Answered</dt><dd data-demo-total>0</dd></div>
+              <div><dt>Streak</dt><dd data-demo-streak>0</dd></div>
+              <div><dt>Best streak</dt><dd data-demo-best>0</dd></div>
+            </dl>
+            <button class="demo-reset" type="button" data-demo-reset hidden>Start over</button>
+          </div>
+          <p class="demo-error demo-static" data-demo-static><strong>The quiz runs on the live site.</strong>It needs JavaScript and a web server. Open kaankekec-sec.github.io/artikelmeister in your browser to play.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section" id="download" aria-labelledby="download-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="download-title" class="reveal">Download</h2>
+          <p class="reveal">Free, and not on any app store yet. Every release lives on GitHub.</p>
+        </div>
+        <div class="downloads" data-stagger>
+          <article class="dl reveal" aria-labelledby="dl-android">
+            <h3 id="dl-android">Android</h3>
+            <p class="req">Android 8.0 or newer</p>
+            <p class="file">ArtikelMeister.apk</p>
+            <ul>
+              <li>Download the .apk on your phone and open it.</li>
+              <li>Android may ask you to allow installs from your browser first.</li>
+            </ul>
+            <a class="btn btn-primary" href="https://github.com/kaankekec-sec/artikelmeister/releases">Download for Android</a>
+          </article>
+          <article class="dl reveal" aria-labelledby="dl-mac">
+            <h3 id="dl-mac">macOS</h3>
+            <p class="req">macOS 13 Ventura or newer</p>
+            <p class="file">ArtikelMeister.dmg</p>
+            <ul>
+              <li>Open the .dmg and move ArtikelMeister to Applications.</li>
+              <li>Pick the latest release at the top of the page.</li>
+            </ul>
+            <a class="btn btn-primary" href="https://github.com/kaankekec-sec/artikelmeister/releases">Download for macOS</a>
+          </article>
+          <div class="dl-planned reveal">
+            <h3>Windows</h3>
+            <p>Planned. Watch the <a href="https://github.com/kaankekec-sec/artikelmeister">GitHub repo</a> to hear when it lands.</p>
+          </div>
+        </div>
+        <p class="license-note reveal">ArtikelMeister is <strong>open source under the MIT license</strong>. Read the code, build it yourself, or send a pull request on <a href="https://github.com/kaankekec-sec/artikelmeister">GitHub</a>.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap split">
+        <div class="section-head">
+          <h2 id="faq-title" class="reveal">Questions</h2>
+          <p class="reveal">Something else on your mind? <a href="mailto:kaankekec2727@gmail.com">Send an email</a> or open an issue on <a href="https://github.com/kaankekec-sec/artikelmeister/issues">GitHub</a>.</p>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Is it really free?</summary>
+            <div class="answer"><p>Yes. No ads, no subscription, no paid tier. The code is open source under the MIT license.</p></div>
+          </details>
+          <details>
+            <summary>What language is the app in?</summary>
+            <div class="answer"><p>The app is in Turkish, built for Turkish speakers learning German. Meanings for AI-generated words come in Turkish too. This website is in English so more people can read it.</p></div>
+          </details>
+          <details>
+            <summary>Do I need a Google account?</summary>
+            <div class="answer"><p>No. You can study, import CSV files and track your streak without one. Google sign-in is only for the Drive backup and the AI generator, and the generator also works with your own Gemini API key.</p></div>
+          </details>
+          <details>
+            <summary>Does the AI generator cost money?</summary>
+            <div class="answer"><p>ArtikelMeister doesn't charge anything. The generator runs on your own Google account or Gemini API key, so Google's own terms and limits apply.</p></div>
+          </details>
+          <details>
+            <summary>Why isn't it on Google Play or the App Store?</summary>
+            <div class="answer"><p>Not yet. For now, every version is published on <a href="https://github.com/kaankekec-sec/artikelmeister/releases">GitHub Releases</a>.</p></div>
+          </details>
+          <details>
+            <summary>Is there a Windows version?</summary>
+            <div class="answer"><p>It's planned. Android and macOS come first.</p></div>
+          </details>
+          <details>
+            <summary>Why is the icon a bleeding brain?</summary>
+            <div class="answer"><p>Because remembering articles hurts. Ask anyone who has spent ten minutes wondering why a girl, <span lang="de">das Mädchen</span>, is neuter.</p></div>
+          </details>
+          <details>
+            <summary>I found a bug. Where do I report it?</summary>
+            <div class="answer"><p>Open an issue on <a href="https://github.com/kaankekec-sec/artikelmeister/issues">GitHub</a> or email <a href="mailto:kaankekec2727@gmail.com">kaankekec2727@gmail.com</a>.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="./">
+          <img src="assets/img/logo-96.png" width="34" height="34" alt="">
+          <span>ArtikelMeister</span>
+        </a>
+        <p class="footer-made">Made by Kaan</p>
+        <p>Open source under the MIT license.</p>
+      </div>
+      <div class="footer-links">
+        <nav aria-labelledby="f-project">
+          <h2 id="f-project">Project</h2>
+          <ul>
+            <li><a href="https://github.com/kaankekec-sec/artikelmeister">Source code on GitHub</a></li>
+            <li><a href="https://github.com/kaankekec-sec/artikelmeister/releases">Releases</a></li>
+            <li><a href="https://github.com/kaankekec-sec">Kaan on GitHub</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-legal">
+          <h2 id="f-legal">Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a class="email" href="mailto:kaankekec2727@gmail.com">kaankekec2727@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
