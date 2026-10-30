@@ -2,151 +2,181 @@
   {
     "noun": "Tisch",
     "article": "der",
-    "en": "table"
+    "en": "table",
+    "tr": "masa"
   },
   {
     "noun": "Stuhl",
     "article": "der",
-    "en": "chair"
+    "en": "chair",
+    "tr": "sandalye"
   },
   {
     "noun": "Hund",
     "article": "der",
-    "en": "dog"
+    "en": "dog",
+    "tr": "köpek"
   },
   {
     "noun": "Apfel",
     "article": "der",
-    "en": "apple"
+    "en": "apple",
+    "tr": "elma"
   },
   {
     "noun": "Garten",
     "article": "der",
-    "en": "garden"
+    "en": "garden",
+    "tr": "bahçe"
   },
   {
     "noun": "Bahnhof",
     "article": "der",
-    "en": "train station"
+    "en": "train station",
+    "tr": "tren istasyonu"
   },
   {
     "noun": "Käse",
     "article": "der",
-    "en": "cheese"
+    "en": "cheese",
+    "tr": "peynir"
   },
   {
     "noun": "Schlüssel",
     "article": "der",
-    "en": "key"
+    "en": "key",
+    "tr": "anahtar"
   },
   {
     "noun": "Baum",
     "article": "der",
-    "en": "tree"
+    "en": "tree",
+    "tr": "ağaç"
   },
   {
     "noun": "Regen",
     "article": "der",
-    "en": "rain"
+    "en": "rain",
+    "tr": "yağmur"
   },
   {
     "noun": "Lampe",
     "article": "die",
-    "en": "lamp"
+    "en": "lamp",
+    "tr": "lamba"
   },
   {
     "noun": "Katze",
     "article": "die",
-    "en": "cat"
+    "en": "cat",
+    "tr": "kedi"
   },
   {
     "noun": "Tür",
     "article": "die",
-    "en": "door"
+    "en": "door",
+    "tr": "kapı"
   },
   {
     "noun": "Straße",
     "article": "die",
-    "en": "street"
+    "en": "street",
+    "tr": "sokak"
   },
   {
     "noun": "Uhr",
     "article": "die",
-    "en": "clock"
+    "en": "clock",
+    "tr": "saat"
   },
   {
     "noun": "Blume",
     "article": "die",
-    "en": "flower"
+    "en": "flower",
+    "tr": "çiçek"
   },
   {
     "noun": "Zeitung",
     "article": "die",
-    "en": "newspaper"
+    "en": "newspaper",
+    "tr": "gazete"
   },
   {
     "noun": "Schule",
     "article": "die",
-    "en": "school"
+    "en": "school",
+    "tr": "okul"
   },
   {
     "noun": "Küche",
     "article": "die",
-    "en": "kitchen"
+    "en": "kitchen",
+    "tr": "mutfak"
   },
   {
     "noun": "Stadt",
     "article": "die",
-    "en": "city"
+    "en": "city",
+    "tr": "şehir"
   },
   {
     "noun": "Buch",
     "article": "das",
-    "en": "book"
+    "en": "book",
+    "tr": "kitap"
   },
   {
     "noun": "Haus",
     "article": "das",
-    "en": "house"
+    "en": "house",
+    "tr": "ev"
   },
   {
     "noun": "Fenster",
     "article": "das",
-    "en": "window"
+    "en": "window",
+    "tr": "pencere"
   },
   {
     "noun": "Wasser",
     "article": "das",
-    "en": "water"
+    "en": "water",
+    "tr": "su"
   },
   {
     "noun": "Brot",
     "article": "das",
-    "en": "bread"
+    "en": "bread",
+    "tr": "ekmek"
   },
   {
     "noun": "Auto",
     "article": "das",
-    "en": "car"
+    "en": "car",
+    "tr": "araba"
   },
   {
     "noun": "Kind",
     "article": "das",
-    "en": "child"
+    "en": "child",
+    "tr": "çocuk"
   },
   {
     "noun": "Bett",
     "article": "das",
-    "en": "bed"
+    "en": "bed",
+    "tr": "yatak"
   },
   {
     "noun": "Handy",
     "article": "das",
-    "en": "mobile phone"
+    "en": "mobile phone",
+    "tr": "cep telefonu"
   },
   {
     "noun": "Fahrrad",
     "article": "das",
-    "en": "bicycle"
+    "en": "bicycle",
+    "tr": "bisiklet"
   }
 ]

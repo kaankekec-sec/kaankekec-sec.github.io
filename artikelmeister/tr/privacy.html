@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gizlilik Politikası – ArtikelMeister</title>
+  <meta name="description" content="ArtikelMeister uygulamasının verilerini nasıl işlediği: cihazdaki çalışma verileri, Google ile giriş, Gemini ile kelime üretme ve Google Drive yedeği.">
+  <!-- Absolute URLs: base comes from site.config.json; change via tools/set-base-url.py -->
+  <link rel="canonical" href="https://kaankekec-sec.github.io/artikelmeister/tr/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://kaankekec-sec.github.io/artikelmeister/privacy.html">
+  <link rel="alternate" hreflang="tr" href="https://kaankekec-sec.github.io/artikelmeister/tr/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://kaankekec-sec.github.io/artikelmeister/privacy.html">
+  <meta name="theme-color" content="#19221f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ArtikelMeister">
+  <meta property="og:title" content="Gizlilik Politikası – ArtikelMeister">
+  <meta property="og:description" content="ArtikelMeister uygulamasının verilerini nasıl işlediği: cihazdaki çalışma verileri, Google ile giriş, Gemini ile kelime üretme ve Google Drive yedeği.">
+  <meta property="og:url" content="https://kaankekec-sec.github.io/artikelmeister/tr/privacy.html">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://kaankekec-sec.github.io/artikelmeister/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="der Tisch, die Lampe ve das Buch yazan üç kart ve ArtikelMeister uygulama simgesi.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gizlilik Politikası – ArtikelMeister">
+  <meta name="twitter:description" content="ArtikelMeister uygulamasının verilerini nasıl işlediği: cihazdaki çalışma verileri, Google ile giriş, Gemini ile kelime üretme ve Google Drive yedeği.">
+  <meta name="twitter:image" content="https://kaankekec-sec.github.io/artikelmeister/assets/img/og-image.png">
+  <meta name="twitter:image:alt" content="der Tisch, die Lampe ve das Buch yazan üç kart ve ArtikelMeister uygulama simgesi.">
+
+  <link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="preload" href="../assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script>(function(){var d=document.documentElement;if(location.protocol==='file:')return;d.classList.add('js');setTimeout(function(){if(!window.__amReady)d.classList.add('no-reveal');},1200);})();</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+
+  <header class="site-header is-scrolled">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="ArtikelMeister ana sayfa">
+        <img src="../assets/img/logo-96.png" width="34" height="34" alt="">
+        <span>ArtikelMeister</span>
+      </a>
+      <div class="header-right">
+        <nav class="lang-switch" aria-label="Dil">
+          <a href="../privacy.html" hreflang="en" lang="en">EN<span class="visually-hidden"> – English</span></a>
+          <a href="privacy.html" hreflang="tr" lang="tr" aria-current="true">TR<span class="visually-hidden"> – Türkçe</span></a>
+        </nav>
+        <nav class="nav" aria-label="Ana menü">
+          <ul>
+            <li class="nav-optional"><a href="./#how">Nasıl çalışır</a></li>
+            <li class="nav-optional"><a href="./#demo">Dene</a></li>
+            <li class="nav-optional"><a href="./#faq">SSS</a></li>
+            <li><a class="nav-cta" href="./#download">İndir</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="prose" id="main">
+<!-- LEGAL:START -->
+<h1>Gizlilik Politikası</h1>
+<p class="meta">Son güncelleme: 30 Ekim 2026</p>
+
+<p>Bu metin İngilizce sürümün çevirisidir; farklılık olursa İngilizce sürüm geçerlidir. (<a href="../privacy.html" hreflang="en" lang="en">English version</a>)</p>
+
+<p>ArtikelMeister, Almanca isimlerin artikellerini (<em>der</em>, <em>die</em>, <em>das</em>) öğrenmenize yardımcı olan, Android ve macOS için ücretsiz ve açık kaynaklı bir uygulamadır. Bizim tarafımızda hesap yok, kendi sunucularımız yok; analiz araçları, reklamlar ve takip yok. Bu sayfa, uygulamanın verilerinizle ve Google kullanıcı verileriyle ne yaptığını açıklar.</p>
+
+<h2>Cihazınızda saklanan veriler</h2>
+<p>Kartlarınız, çalışma ilerlemeniz, günlük serileriniz ve ayarlarınız cihazınızda, uygulamanın özel depolama alanında yerel olarak saklanır. Uygulama çevrimdışı çalışır. Bu verileri istediğiniz zaman silebilirsiniz.</p>
+
+<h2>Google ile giriş ve izinler</h2>
+<p>Google ile giriş yapmak isteğe bağlıdır. Giriş yapmayı seçerseniz uygulama şu izinleri ister:</p>
+<ul>
+  <li><code>openid</code>, <code>userinfo.email</code>, <code>userinfo.profile</code>: hangi Google hesabının bağlı olduğunu göstermek için.</li>
+  <li><code>drive.file</code>: Google Drive'ınızda uygulamanın kendi yedek dosyasını oluşturmak ve güncellemek için. Bu izinle uygulama yalnızca kendi oluşturduğu dosyalara erişebilir; Drive'ınızdaki diğer dosyalara erişemez.</li>
+  <li><code>generative-language.retriever</code> ve <code>cloud-platform</code>: yalnızca yapay zekâ kelime üretici için Google'ın Gemini API'sine istek göndermek amacıyla.</li>
+</ul>
+
+<h2>Google Drive yedeği</h2>
+<p>Giriş yaptığınızda uygulama; kelime listenizin, çalışma ilerlemenizin ve ayarlarınızın yedeğini kendi Google Drive'ınızdaki <strong>ArtikelMeister Cloud Sync</strong> adlı bir klasörde tutar. Bir şeyi değiştirdiğinizde yedek otomatik olarak güncellenir ve cihazlarınızı eşitlemek için kullanılır. Yedek sizin Drive'ınızda kalır. Ona erişimimiz yoktur.</p>
+
+<h2>Yapay zekâ kelime üretici</h2>
+<p>Yapay zekâ kelime üreticiyi kullandığınızda uygulama, cihazınızdan doğrudan Google'ın Gemini API'sine bir istek gönderir. İstek; seçtiğiniz seviyeyi, kelime sayısını, isteğe bağlı olarak yazdığınız bir konuyu ve zaten sahip olduğunuz kelimelerin bir listesini (yapay zekânın aynı kelimeleri tekrar önermemesi için) içerir. Giriş yapmak yerine kendi Gemini API anahtarınızı da kullanabilirsiniz.</p>
+
+<h2>Kimlik bilgileri</h2>
+<p>Oturum belirteçleriniz ve API anahtarınız, cihazınızda platformun depolama alanı (örneğin macOS Anahtar Zinciri) kullanılarak saklanır. Kimliğinizi doğrulamak için Google'a gönderilmeleri dışında hiçbir yere gönderilmezler.</p>
+
+<h2>Google API Hizmetleri Kullanıcı Verileri Politikası</h2>
+<p>ArtikelMeister'ın Google API'lerinden alınan bilgileri kullanımı ve aktarımı, Sınırlı Kullanım gereklilikleri de dahil olmak üzere <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>'ye (Google API Hizmetleri Kullanıcı Verileri Politikası) uygun olacaktır.</p>
+<p lang="en">ArtikelMeister's use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<ul>
+  <li>Google kullanıcı verileri yalnızca bu sayfada açıklanan özellikleri sunmak için kullanılır.</li>
+  <li>Satılmaz ve reklam amacıyla kullanılmaz.</li>
+  <li>Yapay zekâ modellerini eğitmek için kullanılmaz.</li>
+  <li>Üçüncü taraflara aktarılmaz.</li>
+  <li>İnsanlar tarafından okunmaz; ancak sizin izniniz varsa, güvenlik için gerekliyse veya yasalar gerektiriyorsa okunabilir.</li>
+</ul>
+
+<h2>Veri paylaşımı</h2>
+<p>Verilerinizi kimseyle paylaşmayız. Uygulamanın yaptığı tek iletişim, doğrudan cihazınız ile Google arasındadır.</p>
+
+<h2>Saklama, erişimi kaldırma ve silme</h2>
+<ul>
+  <li>Verileriniz, siz silene kadar saklanır.</li>
+  <li>Uygulamanın Ayarlar bölümündeki <em>Hesap Verilerini Sil</em> ("Delete account data") seçeneği, Drive yedeğini ve cihazınızdaki verileri kaldırır.</li>
+  <li>Uygulamanın erişimini istediğiniz zaman <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> adresinden kaldırabilirsiniz; ayrıca Drive'ınızdaki "ArtikelMeister Cloud Sync" klasörünü kendiniz de silebilirsiniz.</li>
+  <li>Android'de uygulamayı kaldırmak yerel verileri de kaldırır. macOS'te <code>~/Library/Application Support/ArtikelMeister</code> klasörünü silerek bu verileri kaldırabilirsiniz.</li>
+</ul>
+
+<h2>Güvenlik</h2>
+<p>Uygulama Google'a yalnızca HTTPS üzerinden bağlanır. Verileriniz cihazınızda ve kendi Google Drive'ınızda kalır.</p>
+
+<h2>Çocuklar</h2>
+<p>ArtikelMeister 13 yaşın altındaki çocuklara yönelik değildir. Hiçbir kişisel veri toplamayız.</p>
+
+<h2>Bu politikadaki değişiklikler</h2>
+<p>Bu politika değişirse güncel sürüm, yeni bir tarihle bu sayfada yayımlanır.</p>
+
+<h2>İletişim</h2>
+<p>Sorularınız mı var? <a href="mailto:kaankekec2727@gmail.com">kaankekec2727@gmail.com</a> adresine e-posta gönderin veya <a href="https://github.com/kaankekec-sec/artikelmeister/issues">GitHub</a>'da bir issue açın.</p>
+<!-- LEGAL:END -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="./">
+          <img src="../assets/img/logo-96.png" width="34" height="34" alt="">
+          <span>ArtikelMeister</span>
+        </a>
+        <p class="footer-made">Kaan tarafından yapıldı</p>
+        <p>MIT lisansıyla açık kaynak.</p>
+      </div>
+      <div class="footer-links">
+        <nav aria-labelledby="f-project">
+          <h2 id="f-project">Proje</h2>
+          <ul>
+            <li><a href="https://github.com/kaankekec-sec/artikelmeister">GitHub'daki kaynak kod</a></li>
+            <li><a href="https://github.com/kaankekec-sec/artikelmeister/releases">Sürümler</a></li>
+            <li><a href="https://github.com/kaankekec-sec">Kaan GitHub'da</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-legal">
+          <h2 id="f-legal">Yasal</h2>
+          <ul>
+            <li><a href="privacy.html">Gizlilik politikası</a></li>
+            <li><a href="terms.html">Kullanım koşulları</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>İletişim</h2>
+          <ul>
+            <li><a class="email" href="mailto:kaankekec2727@gmail.com">kaankekec2727@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

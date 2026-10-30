@@ -1,6 +1,38 @@
 // "Der, die or das?" mini quiz.
-// Words come from assets/data/words.json: [{ "noun": "Tisch", "article": "der", "en": "table" }, ...]
+// Words come from assets/data/words.json:
+//   [{ "noun": "Tisch", "article": "der", "en": "table", "tr": "masa" }, ...]
+// Turkish pages show `tr` (falling back to `en`), English pages show `en`.
 // Everything stays in memory; only the best streak is kept in localStorage.
+import { LANG, strings } from "./i18n.js";
+
+const T = strings({
+  en: {
+    right: "Richtig! ",
+    wrongBefore: "Not quite. It's ",
+    wrongAfter: ". It'll come back soon.",
+    newWord: "New word: ",
+    loadTitle: "The word list didn't load.",
+    loadMsg: "Check your connection and reload the page to play.",
+    fileTitle: "The quiz runs on the live site.",
+    fileMsg: "It needs JavaScript and a web server, so it can't run from a file opened on your computer.",
+  },
+  tr: {
+    right: "Richtig! ",
+    wrongBefore: "Olmadı. Doğrusu: ",
+    wrongAfter: ". Birazdan tekrar gelecek.",
+    newWord: "Yeni kelime: ",
+    loadTitle: "Kelime listesi yüklenemedi.",
+    loadMsg: "Bağlantını kontrol edip sayfayı yenile.",
+    fileTitle: "Test canlı sitede çalışıyor.",
+    fileMsg: "JavaScript ve bir web sunucusu gerektirdiği için bilgisayarında dosya olarak açıldığında çalışmaz.",
+  },
+});
+
+// The meaning shown under the noun, in the page language when available.
+function meaning(w) {
+  if (LANG === "tr" && typeof w.tr === "string" && w.tr) return { text: w.tr, lang: "tr" };
+  return { text: typeof w.en === "string" ? w.en : "", lang: "en" };
+}
 
 const WORDS_URL = new URL("../data/words.json", import.meta.url);
 const ARTICLES = ["der", "die", "das"];
@@ -81,14 +113,10 @@ export async function initDemo(root, { reduceMotion }) {
     const box = document.createElement("div");
     box.className = "demo-error";
     const title = document.createElement("strong");
-    title.textContent = "The word list didn't load.";
-    if (location.protocol === "file:") {
-      title.textContent = "The quiz runs on the live site.";
-    }
+    const local = location.protocol === "file:";
+    title.textContent = local ? T.fileTitle : T.loadTitle;
     const msg = document.createElement("span");
-    msg.textContent = location.protocol === "file:"
-      ? "Browsers block it when the page is opened as a local file. Open kaankekec-sec.github.io/artikelmeister to play."
-      : "Check your connection and reload the page to play.";
+    msg.textContent = local ? T.fileMsg : T.loadMsg;
     box.append(title, msg);
     root.replaceChildren(box);
   }
@@ -111,7 +139,9 @@ export async function initDemo(root, { reduceMotion }) {
     slot.className = "slot";
     slot.textContent = "der"; // transparent placeholder keeps the baseline
     noun.textContent = word.noun;
-    en.textContent = word.en || "";
+    const m = meaning(word);
+    en.textContent = m.text;
+    en.lang = m.lang;
     feedback.textContent = "";
     nextBtn.hidden = true;
     card.classList.remove("is-wrong");
@@ -120,7 +150,7 @@ export async function initDemo(root, { reduceMotion }) {
       b.classList.remove("is-right", "is-wrong");
       b.removeAttribute("aria-pressed");
     });
-    sr.textContent = `New word: ${word.noun}${word.en ? `, ${word.en}` : ""}.`;
+    sr.textContent = `${T.newWord}${word.noun}${m.text ? `, ${m.text}` : ""}.`;
   }
 
   function answer(article) {
@@ -159,9 +189,9 @@ export async function initDemo(root, { reduceMotion }) {
     const msg = document.createElement("span");
     msg.className = right ? "ok" : "no";
     if (right) {
-      msg.append("Richtig! ", de(`${word.article} ${word.noun}`), ".");
+      msg.append(T.right, de(`${word.article} ${word.noun}`), ".");
     } else {
-      msg.append("Not quite. It's ", de(`${word.article} ${word.noun}`), `. It'll come back soon.`);
+      msg.append(T.wrongBefore, de(`${word.article} ${word.noun}`), T.wrongAfter);
     }
     feedback.replaceChildren(msg);
     sr.textContent = "";

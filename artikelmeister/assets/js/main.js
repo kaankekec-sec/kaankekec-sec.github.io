@@ -96,8 +96,9 @@ function initHero() {
     slot.className = "slot";
     slot.textContent = "der"; // transparent placeholder
     noun.textContent = w.n;
-    tr.textContent = w.tr;
-    en.textContent = w.en;
+    // English page shows "masa (table)", Turkish page shows "masa".
+    if (tr) tr.textContent = w.tr;
+    if (en) en.textContent = w.en;
   };
   const fill = (w) => {
     slot.textContent = w.a;

@@ -1,6 +1,24 @@
 // Screenshot carousel built from the SCREENSHOTS array.
 // Missing or broken images fall back to a "coming soon" frame, never a broken icon.
 import { SCREENSHOTS } from "./screenshots.js";
+import { pick, strings } from "./i18n.js";
+
+const T = strings({
+  en: {
+    soon: "Screenshot coming soon",
+    carousel: "carousel",
+    slide: "slide",
+    position: (i, n) => `${i} of ${n}`,
+    alt: (title, caption) => `${title} screen of ArtikelMeister on ${caption}`,
+  },
+  tr: {
+    soon: "Ekran görüntüsü yakında",
+    carousel: "kaydırmalı galeri",
+    slide: "slayt",
+    position: (i, n) => `${i} / ${n}`,
+    alt: (title, caption) => `ArtikelMeister, ${caption}: ${title} ekranı`,
+  },
+});
 
 const DIR = new URL("../screenshots/", import.meta.url);
 const DEFAULT_SIZE = { phone: [1080, 2340], desktop: [1440, 900] };
@@ -15,19 +33,21 @@ function placeholder() {
   word.textContent = "bald";
   const sub = document.createElement("span");
   sub.className = "soon-sub";
-  sub.textContent = "Screenshot coming soon";
+  sub.textContent = T.soon;
   inner.append(word, sub);
   box.append(inner);
   return box;
 }
 
 function slide(item, index, count) {
+  const title = pick(item.title);
+  const caption = pick(item.caption);
   const device = item.device === "desktop" ? "desktop" : "phone";
   const li = document.createElement("div");
   li.className = "gallery-slide";
   li.setAttribute("role", "group");
-  li.setAttribute("aria-roledescription", "slide");
-  li.setAttribute("aria-label", `${index + 1} of ${count}: ${item.title}`);
+  li.setAttribute("aria-roledescription", T.slide);
+  li.setAttribute("aria-label", `${T.position(index + 1, count)}: ${title}`);
 
   const fig = document.createElement("figure");
   fig.style.margin = "0";
@@ -43,7 +63,7 @@ function slide(item, index, count) {
     img.height = h;
     img.loading = "lazy";
     img.decoding = "async";
-    img.alt = item.alt || `${item.title} screen of ArtikelMeister on ${item.caption}`;
+    img.alt = pick(item.alt) || T.alt(title, caption);
     img.addEventListener("error", () => screen.replaceWith(placeholder()), { once: true });
     img.src = new URL(item.file, DIR).href;
     screen.append(img);
@@ -54,8 +74,8 @@ function slide(item, index, count) {
 
   const cap = document.createElement("figcaption");
   const strong = document.createElement("strong");
-  strong.textContent = item.title;
-  cap.append(strong, document.createTextNode(item.caption || ""));
+  strong.textContent = title;
+  cap.append(strong, document.createTextNode(caption));
   fig.append(frame, cap);
   li.append(fig);
   return li;
@@ -67,6 +87,7 @@ export function initGallery(root, { reduceMotion }) {
   const next = root.querySelector("[data-gallery-next]");
   const status = root.querySelector("[data-gallery-status]");
   if (!track) return;
+  track.setAttribute("aria-roledescription", T.carousel);
 
   // Replace the static placeholder markup with slides built from the data array.
   track.replaceChildren(...SCREENSHOTS.map((item, i) => slide(item, i, SCREENSHOTS.length)));
@@ -102,7 +123,7 @@ export function initGallery(root, { reduceMotion }) {
     next.disabled = atEnd;
     const shown = atEnd ? slides.length - 1 : i;
     if (shown !== lastAnnounced) {
-      status.textContent = `${shown + 1} of ${slides.length}`;
+      status.textContent = T.position(shown + 1, slides.length);
       lastAnnounced = shown;
     }
   };

@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArtikelMeister – der, die, das için bilgi kartları</title>
+  <meta name="description" content="ArtikelMeister, Almanca isimlerin artikellerini öğrenmek için ücretsiz ve açık kaynaklı bir bilgi kartı uygulaması. Aralıklı tekrar, yapay zekâ ile kelime üretme, CSV içe aktarma ve Google Drive yedeği. Android ve macOS için.">
+  <!-- Absolute URLs: base comes from site.config.json; change via tools/set-base-url.py -->
+  <link rel="canonical" href="https://kaankekec-sec.github.io/artikelmeister/tr/">
+  <link rel="alternate" hreflang="en" href="https://kaankekec-sec.github.io/artikelmeister/">
+  <link rel="alternate" hreflang="tr" href="https://kaankekec-sec.github.io/artikelmeister/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://kaankekec-sec.github.io/artikelmeister/">
+  <meta name="theme-color" content="#19221f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ArtikelMeister">
+  <meta property="og:title" content="ArtikelMeister – der, die, das tahminine son">
+  <meta property="og:description" content="Almanca artikelleri öğrenmek için ücretsiz, açık kaynaklı bir bilgi kartı uygulaması. Android ve macOS için.">
+  <meta property="og:url" content="https://kaankekec-sec.github.io/artikelmeister/tr/">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://kaankekec-sec.github.io/artikelmeister/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="der Tisch, die Lampe ve das Buch yazan üç kart ve ArtikelMeister uygulama simgesi.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ArtikelMeister – der, die, das tahminine son">
+  <meta name="twitter:description" content="Almanca artikelleri öğrenmek için ücretsiz, açık kaynaklı bir bilgi kartı uygulaması. Android ve macOS için.">
+  <meta name="twitter:image" content="https://kaankekec-sec.github.io/artikelmeister/assets/img/og-image.png">
+  <meta name="twitter:image:alt" content="der Tisch, die Lampe ve das Buch yazan üç kart ve ArtikelMeister uygulama simgesi.">
+
+  <link rel="icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="preload" href="../assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script>(function(){var d=document.documentElement;if(location.protocol==='file:')return;d.classList.add('js');setTimeout(function(){if(!window.__amReady)d.classList.add('no-reveal');},1200);})();</script>
+  <script type="application/ld+json" id="ld">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ArtikelMeister",
+  "description": "Almanca isimlerin artikellerini (der, die, das) aralıklı tekrar, yapay zekâ kelime üretici ve CSV içe aktarma ile öğreten açık kaynaklı bir kart uygulaması.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Android, macOS",
+  "url": "https://kaankekec-sec.github.io/artikelmeister/tr/",
+  "downloadUrl": "https://github.com/kaankekec-sec/artikelmeister/releases",
+  "license": "https://opensource.org/licenses/MIT",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Kaan",
+    "url": "https://github.com/kaankekec-sec"
+  },
+  "inLanguage": "tr"
+}
+  </script>
+  <script type="module" src="../assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="ArtikelMeister ana sayfa">
+        <img src="../assets/img/logo-96.png" width="34" height="34" alt="">
+        <span>ArtikelMeister</span>
+      </a>
+      <div class="header-right">
+        <nav class="lang-switch" aria-label="Dil">
+          <a href="../" hreflang="en" lang="en">EN<span class="visually-hidden"> – English</span></a>
+          <a href="./" hreflang="tr" lang="tr" aria-current="true">TR<span class="visually-hidden"> – Türkçe</span></a>
+        </nav>
+        <nav class="nav" aria-label="Ana menü">
+          <ul>
+            <li class="nav-optional"><a href="#how">Nasıl çalışır</a></li>
+            <li class="nav-optional"><a href="#demo">Dene</a></li>
+            <li class="nav-optional"><a href="#faq">SSS</a></li>
+            <li><a class="nav-cta" href="#download">İndir</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div>
+          <h1 id="hero-title" class="hero-title--long"><span class="art" lang="de"><span class="g-der">der</span>, <span class="g-die">die</span>, <span class="g-das">das</span></span> tahmin etmekten yoruldun mu? Ben de yoruldum, o yüzden bir uygulama yaptım.</h1>
+          <p class="lede reveal" style="--i:1">ArtikelMeister, Almanca isimlerin artikellerini öğrenmek için ücretsiz bir bilgi kartı uygulaması. Her kelimeyi artikeliyle birlikte gösterir ve tam unutmak üzereyken yeniden karşına çıkarır; ta ki <strong lang="de">die Lampe</strong> kulağına doğru gelene kadar. Android ve macOS için, Türkçe konuşanlar için yapıldı.</p>
+          <div class="hero-actions reveal" style="--i:2">
+            <a class="btn btn-primary" href="#download">Ücretsiz indir</a>
+            <a class="btn btn-ghost" href="#demo">Testi dene</a>
+          </div>
+          <p class="hero-note reveal" style="--i:3">MIT lisansıyla açık kaynak. Çalışmak için hesap gerekmez.</p>
+        </div>
+
+        <div class="card-stage" aria-hidden="true" data-parallax="-0.05">
+          <div class="index-card index-card--back b1" data-parallax="0.04"></div>
+          <div class="index-card index-card--back b2"></div>
+          <div class="index-card hero-card" data-hero-card>
+            <span class="card-tag">A1 Temel</span>
+            <div class="card-face">
+              <p class="card-word" lang="de"><span class="slot is-filled a-der" data-hero-slot>der</span> <span data-hero-noun>Tisch</span></p>
+              <p class="card-meaning"><span data-hero-tr>masa</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem -->
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="wrap split">
+        <div class="prose-block">
+          <h2 id="problem-title" class="reveal">Kaşık, çatal, bıçak. Üç ayrı artikel.</h2>
+          <p class="lead reveal">Almancada her ismin bir cinsiyeti var ve bu cinsiyetin çoğu zaman nesnenin kendisiyle hiçbir ilgisi yok.</p>
+          <p class="reveal">Kız çocuğu nötr: <strong lang="de">das Mädchen</strong>. Güneş dişil, ay eril: <strong lang="de">die Sonne</strong>, <strong lang="de">der Mond</strong>. Kurallar var, ama her kuralın arkasında sırada bekleyen bir yığın istisna da var.</p>
+          <p class="reveal">Sonuçta tahmin ediyorsun. Sınavda, ev sahibine yazdığın e-postada, fırının tezgâhında. Çözümü sıkıcı ama işe yarıyor: her ismi artikeliyle birlikte, doğru zamanlarda, tekrar tekrar görmek.</p>
+        </div>
+        <div>
+          <ul class="trio" lang="de" data-stagger role="list">
+            <li class="trio-item g-der reveal"><span class="w">der <span class="noun">Löffel</span></span><span class="t" lang="tr">kaşık</span></li>
+            <li class="trio-item g-die reveal"><span class="w">die <span class="noun">Gabel</span></span><span class="t" lang="tr">çatal</span></li>
+            <li class="trio-item g-das reveal"><span class="w">das <span class="noun">Messer</span></span><span class="t" lang="tr">bıçak</span></li>
+          </ul>
+          <div class="aside-quote reveal">
+            <img src="../assets/img/logo-96.png" width="56" height="56" alt="ArtikelMeister uygulama simgesi: kan damlayan kırmızı bir beyin">
+            <p><strong>Simge hakkında.</strong> Kanayan bir beyin, çünkü artikelleri ezberlemek acıtıyor. Tasarım brifinin tamamı bu kadar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features overview -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap split">
+        <div class="features-sticky">
+          <h2 id="features-title" class="reveal" style="font-size:var(--step-4);margin-bottom:1.5rem">Neler yapıyor?</h2>
+          <div class="readme-note reveal" style="--i:1" lang="en">
+            <span class="file">README.md</span>
+            <ul>
+              <li>smart repetition system</li>
+              <li>google drive sync with your google account</li>
+              <li>ai generator</li>
+              <li>could be used offline</li>
+              <li>csv file support to import custom words</li>
+            </ul>
+          </div>
+          <p class="readme-caption reveal" style="--i:2">Özellik listesi, doğrudan README'den. Sayfanın geri kalanı da bunun uzun hâli.</p>
+        </div>
+        <ul class="feature-list" data-stagger>
+          <li class="reveal"><a href="#how"><h3>Akıllı tekrar</h3><p>Bildiğin kelimeler geri planda kalır. Sürekli kaçırdıkların, aklında kalana kadar geri gelir.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#ai"><h3>Yapay zekâ ile kelime üretme</h3><p>Gemini'den seviyene uygun (A1'den C1'e) yeni isimler iste, tekrara düşmeden.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#offline"><h3>Çevrimdışı çalışır</h3><p>Hiç çekmeyen bir trende bile çalış. Kartların cihazında durur.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#backup"><h3>Google Drive yedeği</h3><p>Bir kez giriş yap; kendi Drive'ındaki yedek kendini güncel tutar, cihazların da senkron kalır.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#csv"><h3>CSV içe aktarma</h3><p>Kursundaki kelime listesini bir tablo olarak getir.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="split">
+          <div class="prose-block">
+            <h2 id="how-title" class="reveal">Aralıklı tekrar, jargonsuz</h2>
+            <p class="lead reveal">Hafızan belli bir takvime göre unutur. ArtikelMeister da bir takvime göre tekrar ettirir, sadece bir adım önden.</p>
+            <p class="reveal">Zamanlayıcı, Anki'nin de çıkış noktası olan klasik SM-2 algoritmasından esinleniyor. Uygulamayı kullanmak için bunların hiçbirini bilmen gerekmiyor.</p>
+          </div>
+          <ol class="steps" data-stagger>
+            <li class="reveal">
+              <h3>Artikelsiz bir isim görürsün</h3>
+              <p><span lang="de">___ Tisch?</span> Kafanda söyle, sonra kartı çevir.</p>
+            </li>
+            <li class="reveal">
+              <h3>Nasıl geçtiğini puanlarsın</h3>
+              <p>Dört düğme var:</p>
+              <ul class="ratings" role="list">
+                <li>Tekrar</li>
+                <li>Zor</li>
+                <li>İyi</li>
+                <li>Kolay</li>
+              </ul>
+            </li>
+            <li class="reveal">
+              <h3>Uygulama bir sonraki tarihi seçer</h3>
+              <p>Bilemedin mi? 30 saniye sonra yine karşında. Bildin mi? Her seferinde biraz daha uzun bekler.</p>
+            </li>
+            <li class="reveal">
+              <h3>Sadece vakti gelenleri çalışırsın</h3>
+              <p>Her gün vakti gelen kartlar önüne gelir, istersen yenileri de. Her gün uğrarsan serin uzar.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="interval-chart reveal" role="group" aria-labelledby="chart-title">
+          <h3 id="chart-title">Yeni bir kart, her seferinde “İyi” diye cevaplanırsa</h3>
+          <p class="sub">Bir sonraki tekrara kadar geçen süre. Her aralık, bir öncekinin yaklaşık iki buçuk katı.</p>
+          <ol class="track" role="list">
+            <li class="tick" style="--x:0%"><strong>5 dk</strong>1. tekrardan sonra</li>
+            <li class="tick" style="--x:20%"><strong>1 gün</strong>2. tekrardan sonra</li>
+            <li class="tick" style="--x:40%"><strong>3 gün</strong>3. tekrardan sonra</li>
+            <li class="tick" style="--x:60%"><strong>8 gün</strong>4. tekrardan sonra</li>
+            <li class="tick" style="--x:80%"><strong>20 gün</strong>5. tekrardan sonra</li>
+            <li class="tick" style="--x:100%"><strong>50 gün</strong>6. tekrardan sonra</li>
+          </ol>
+          <p class="chart-foot">Altı doğru cevaptan sonra <span lang="de">der Tisch</span> seni neredeyse iki ay rahat bırakır.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI generator -->
+    <section class="section" id="ai" aria-labelledby="ai-title">
+      <div class="wrap split split--flip split--center">
+        <div class="prose-block">
+          <h2 id="ai-title" class="reveal">Kelimen mi bitti? Gemini'den iste.</h2>
+          <p class="lead reveal">A1'den C1'e bir seviye ve kaç kelime istediğini seç. ArtikelMeister, Google'ın Gemini modelinden artikeli ve Türkçe anlamıyla birlikte isimler ister ve bunları destene ekler.</p>
+          <p class="reveal">Elindeki kelimeleri de gönderir; böylece beşinci kez <span lang="de">Tisch</span> gelmez. İstersen yemek ya da iş gibi bir konu da verebilirsin.</p>
+          <p class="reveal">Google hesabınla giriş yap ya da kendi Gemini API anahtarını yapıştır. <strong>Kelime üretmek için internet gerekir, çalışmak için gerekmez.</strong></p>
+        </div>
+        <div class="mock reveal" data-parallax="0.03">
+          <dl class="mock-head">
+            <div><dt>Seviye</dt><dd>B1</dd></div>
+            <div><dt>Kelime</dt><dd>5</dd></div>
+            <div><dt>Konu</dt><dd lang="de">Arbeit</dd></div>
+            <div><dt>Atlanan</dt><dd>elindeki 214 kelime</dd></div>
+          </dl>
+          <ul class="mock-list" role="list">
+            <li><span class="w" lang="de"><span class="g-der">der</span> Vertrag</span><span class="m">sözleşme</span></li>
+            <li><span class="w" lang="de"><span class="g-die">die</span> Erfahrung</span><span class="m">deneyim</span></li>
+            <li><span class="w" lang="de"><span class="g-das">das</span> Gehalt</span><span class="m">maaş</span></li>
+            <li><span class="w" lang="de"><span class="g-die">die</span> Besprechung</span><span class="m">toplantı</span></li>
+            <li><span class="w" lang="de"><span class="g-der">der</span> Feierabend</span><span class="m">mesai bitimi</span></li>
+          </ul>
+          <p class="mock-foot">Tek bir isteğin neler getirebileceğine bir örnek. Yapay zekâ da hata yapabilir, listeye bir göz at.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offline + privacy -->
+    <section class="section" id="offline" aria-labelledby="offline-title">
+      <div class="wrap split">
+        <div class="prose-block">
+          <h2 id="offline-title" class="reveal">Hiç çekmeyen yerde bile çalışır</h2>
+          <p class="lead reveal">Kelimelerin, destelerin ve ilerlemen cihazında durur. Çalışmak için ne internet ne de hesap gerekir.</p>
+          <p class="reveal">Analiz yok, reklam yok, takip yok. Ne uygulamada ne de bu sitede. Ayrıntılar <a href="privacy.html">gizlilik politikasında</a>.</p>
+        </div>
+        <div class="ledger" data-stagger>
+          <section class="stays reveal" aria-labelledby="stays-title">
+            <h3 id="stays-title">Cihazında durur</h3>
+            <ul>
+              <li><strong>Kelimelerin ve destelerin</strong>, içe aktardıkların dahil</li>
+              <li><strong>İlerlemen</strong>: tekrar tarihleri, puanlar, seri</li>
+              <li><strong>Ayarların</strong></li>
+            </ul>
+          </section>
+          <section class="leaves reveal" aria-labelledby="leaves-title">
+            <h3 id="leaves-title">Sadece kullanırsan internete çıkar</h3>
+            <ul>
+              <li><strong>Yapay zekâ istekleri</strong> doğrudan Google Gemini'ye gider: seviyen, kelime sayısı, isteğe bağlı bir konu ve elindeki kelimeler</li>
+              <li><strong>Kelimelerinin, ilerlemenin ve ayarlarının yedeği</strong>, Google ile giriş yaparsan kendi Google Drive'ına gider</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Drive backup -->
+    <section class="section" id="backup" aria-labelledby="backup-title">
+      <div class="wrap split split--flip split--center">
+        <div class="prose-block">
+          <h2 id="backup-title" class="reveal">Kendi Google Drive'ında bir yedek</h2>
+          <p class="lead reveal">Google ile giriş yap; ArtikelMeister kelimelerinin, ilerlemenin ve ayarlarının yedeğini kendi Drive'ındaki “ArtikelMeister Cloud Sync” klasöründe tutsun.</p>
+          <p class="reveal">Uygulamada bir şey değiştirdiğinde yedek kendiliğinden güncellenir. Başka bir cihazda aynı hesapla giriş yaparsan kartların senkron kalır. Hatırlaman gereken bir “dışa aktar” düğmesi yok.</p>
+        </div>
+        <ol class="backup-strip" data-stagger role="list">
+          <li class="event reveal"><span class="dot" aria-hidden="true"></span><p><strong><span lang="de">die Lampe</span> kelimesini eklersin</strong>A1 Temel destesine</p></li>
+          <li class="event event--done reveal"><span class="dot" aria-hidden="true"></span><p><strong>Yedek güncellendi</strong>Google Drive'ında, kendiliğinden</p></li>
+          <li class="event reveal"><span class="dot" aria-hidden="true"></span><p><strong>Diğer cihazın da yetişir</strong>aynı Google hesabı, aynı kartlar</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CSV import -->
+    <section class="section" id="csv" aria-labelledby="csv-title">
+      <div class="wrap split">
+        <div class="prose-block">
+          <h2 id="csv-title" class="reveal">Kendi kelime listeni getir</h2>
+          <p class="lead reveal">Kurstan aldığın bir kelime listesi mi var? Bir tabloya koy, CSV olarak kaydet ve içe aktar.</p>
+          <p class="reveal">Her satıra bir kelime. Virgül, noktalı virgül ya da sekme, hepsi olur. Dosya hatalı görünürse içe aktarma, mevcut kelimelerine dokunmadan durur.</p>
+          <ul class="csv-cols reveal" role="list">
+            <li><code>artikel</code><span><span lang="de">der</span>, <span lang="de">die</span> ya da <span lang="de">das</span></span></li>
+            <li><code>kelime</code><span>Almanca kelime</span></li>
+            <li><code>anlam</code><span>anlamı</span></li>
+            <li><code>deste</code><span>deste adı (isteğe bağlı)</span></li>
+          </ul>
+        </div>
+        <figure class="csv reveal" data-parallax="0.03">
+          <figcaption><span>examplesheet.csv</span><span>repodaki örnek dosya</span></figcaption>
+<pre tabindex="0" role="region" aria-label="Örnek CSV dosyası"><span class="h">artikel,kelime,anlam,deste</span>
+<span class="g-der">der</span>,Tisch,Masa,A1 Temel
+<span class="g-die">die</span>,Katze,Kedi,A1 Temel
+<span class="g-das">das</span>,Buch,Kitap,A1 Temel
+<span class="g-der">der</span>,Stuhl,Sandalye,A1 Temel</pre>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section" id="screenshots" aria-labelledby="shots-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="shots-title" class="reveal">Ekran görüntüleri</h2>
+          <p class="reveal">Gerçek ekran görüntüleri yolda. O zamana kadar çerçeveler yerlerini sıcak tutuyor.</p>
+        </div>
+      </div>
+      <div class="gallery reveal" data-gallery>
+        <div class="gallery-track" data-gallery-track tabindex="0" role="region" aria-roledescription="kaydırmalı galeri" aria-label="Uygulama ekran görüntüleri">
+          <div class="gallery-slide" role="group" aria-roledescription="slayt" aria-label="1 / 5: Deste çalışma"><figure style="margin:0"><div class="device device--phone"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Ekran görüntüsü yakında</span></div></div></div><figcaption><strong>Deste çalışma</strong>Android</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slayt" aria-label="2 / 5: Kelime listesi"><figure style="margin:0"><div class="device device--desktop"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Ekran görüntüsü yakında</span></div></div></div><figcaption><strong>Kelime listesi</strong>macOS</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slayt" aria-label="3 / 5: Yapay zekâ ile kelime"><figure style="margin:0"><div class="device device--phone"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Ekran görüntüsü yakında</span></div></div></div><figcaption><strong>Yapay zekâ ile kelime</strong>Android</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slayt" aria-label="4 / 5: Deste çalışma"><figure style="margin:0"><div class="device device--desktop"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Ekran görüntüsü yakında</span></div></div></div><figcaption><strong>Deste çalışma</strong>macOS</figcaption></figure></div>
+          <div class="gallery-slide" role="group" aria-roledescription="slayt" aria-label="5 / 5: CSV içe aktarma"><figure style="margin:0"><div class="device device--phone"><div class="screen screen--soon"><div><span class="soon-word" lang="de">bald</span><span class="soon-sub">Ekran görüntüsü yakında</span></div></div></div><figcaption><strong>CSV içe aktarma</strong>Android</figcaption></figure></div>
+        </div>
+        <div class="wrap">
+          <div class="gallery-controls" data-gallery-controls hidden>
+            <button class="icon-btn" type="button" data-gallery-prev aria-label="Önceki ekran görüntüsü">
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </button>
+            <button class="icon-btn" type="button" data-gallery-next aria-label="Sonraki ekran görüntüsü">
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+            </button>
+            <p class="gallery-status" data-gallery-status aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap demo">
+        <div class="prose-block">
+          <h2 id="demo-title" class="reveal"><span lang="de">Der, die</span> mi, <span lang="de">das</span> mı?</h2>
+          <p class="lead reveal">Otuz gündelik isim. Bir artikel seç, doğru mu gör.</p>
+          <p class="reveal">Birini kaçırırsan birkaç kart sonra geri gelir. Bu, uygulamanın tüm destenle yaptığının minik bir hâli; orada saniyeler değil, günler söz konusu.</p>
+          <p class="demo-hint reveal"><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> tuşları <span lang="de">der, die, das</span> seçer. <kbd>Enter</kbd> sonraki kelimeye geçer.</p>
+        </div>
+
+        <div class="demo-panel reveal" data-demo>
+          <div class="demo-card" data-demo-card>
+            <div class="index-card">
+              <span class="card-tag">Test</span>
+              <div class="card-face">
+                <p class="card-word" lang="de"><span class="slot is-filled a-der" data-demo-slot aria-hidden="true">der</span> <span data-demo-noun>Tisch</span></p>
+                <p class="card-meaning" data-demo-en>masa</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="choices" role="group" aria-label="Artikeli seç">
+            <button class="choice" type="button" data-article="der" lang="de" disabled>der<span class="key" aria-hidden="true">1</span></button>
+            <button class="choice" type="button" data-article="die" lang="de" disabled>die<span class="key" aria-hidden="true">2</span></button>
+            <button class="choice" type="button" data-article="das" lang="de" disabled>das<span class="key" aria-hidden="true">3</span></button>
+          </div>
+
+          <div class="demo-feedback">
+            <p data-demo-feedback aria-live="polite" aria-atomic="true"></p>
+            <button class="btn btn-ghost demo-next" type="button" data-demo-next hidden>Sonraki kelime</button>
+          </div>
+
+          <div class="scoreboard">
+            <dl>
+              <div><dt>Doğru</dt><dd data-demo-correct>0</dd></div>
+              <div><dt>Cevaplanan</dt><dd data-demo-total>0</dd></div>
+              <div><dt>Seri</dt><dd data-demo-streak>0</dd></div>
+              <div><dt>En iyi seri</dt><dd data-demo-best>0</dd></div>
+            </dl>
+            <button class="demo-reset" type="button" data-demo-reset hidden>Baştan başla</button>
+          </div>
+          <p class="demo-error demo-static" data-demo-static><strong>Test canlı sitede çalışıyor.</strong>JavaScript ve bir web sunucusu gerektirdiği için bilgisayarında dosya olarak açıldığında çalışmaz.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section" id="download" aria-labelledby="download-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="download-title" class="reveal">İndir</h2>
+          <p class="reveal">Ücretsiz ve henüz hiçbir uygulama mağazasında yok. Tüm sürümler GitHub'da.</p>
+        </div>
+        <div class="downloads" data-stagger>
+          <article class="dl reveal" aria-labelledby="dl-android">
+            <h3 id="dl-android">Android</h3>
+            <p class="req">Android 8.0 veya üstü</p>
+            <p class="file">ArtikelMeister.apk</p>
+            <ul>
+              <li>.apk dosyasını telefonuna indir ve aç.</li>
+              <li>Android önce tarayıcından uygulama yüklemeye izin vermeni isteyebilir.</li>
+            </ul>
+            <a class="btn btn-primary" href="https://github.com/kaankekec-sec/artikelmeister/releases">Android için indir</a>
+          </article>
+          <article class="dl reveal" aria-labelledby="dl-mac">
+            <h3 id="dl-mac">macOS</h3>
+            <p class="req">macOS 14 Sonoma veya üstü</p>
+            <p class="file">ArtikelMeister.dmg</p>
+            <ul>
+              <li>.dmg dosyasını aç ve ArtikelMeister'ı Uygulamalar klasörüne taşı.</li>
+              <li>Sayfanın en üstündeki en son sürümü seç.</li>
+            </ul>
+            <a class="btn btn-primary" href="https://github.com/kaankekec-sec/artikelmeister/releases">macOS için indir</a>
+          </article>
+          <div class="dl-planned reveal">
+            <h3>Windows</h3>
+            <p>Planlanıyor. Ne zaman çıktığını öğrenmek için <a href="https://github.com/kaankekec-sec/artikelmeister">GitHub reposunu</a> takip et.</p>
+          </div>
+        </div>
+        <p class="license-note reveal">ArtikelMeister <strong>MIT lisansıyla açık kaynak</strong>. Kodu oku, kendin derle ya da <a href="https://github.com/kaankekec-sec/artikelmeister">GitHub</a>'da bir pull request gönder.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap split">
+        <div class="section-head">
+          <h2 id="faq-title" class="reveal">Sorular</h2>
+          <p class="reveal">Aklında başka bir şey mi var? <a href="mailto:kaankekec2727@gmail.com">E-posta gönder</a> ya da <a href="https://github.com/kaankekec-sec/artikelmeister/issues">GitHub</a>'da bir issue aç.</p>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Gerçekten ücretsiz mi?</summary>
+            <div class="answer"><p>Evet. Reklam yok, abonelik yok, ücretli sürüm yok. Kod MIT lisansıyla açık kaynak.</p></div>
+          </details>
+          <details>
+            <summary>Uygulama hangi dilde?</summary>
+            <div class="answer"><p>Uygulama Türkçe; Almanca öğrenen Türkçe konuşanlar için yapıldı. Yapay zekânın ürettiği kelimelerin anlamları da Türkçe gelir. Bu site ise hem Türkçe hem <a href="../" hreflang="en">İngilizce</a>.</p></div>
+          </details>
+          <details>
+            <summary>Google hesabı gerekiyor mu?</summary>
+            <div class="answer"><p>Hayır, giriş yapmak isteğe bağlı. “Çevrimdışı Modda Devam Et” ile hesapsız çalışabilir, CSV içe aktarabilir ve serini sürdürebilirsin. Google girişi sadece Drive yedeği için gerekir; bir de kendi Gemini API anahtarını kullanmıyorsan yapay zekâ için.</p></div>
+          </details>
+          <details>
+            <summary>Yapay zekâ ile kelime üretmek ücretli mi?</summary>
+            <div class="answer"><p>ArtikelMeister hiçbir ücret almaz. Kelime üretme senin Google hesabınla ya da kendi Gemini API anahtarınla çalışır, yani Google'ın kendi koşulları ve limitleri geçerlidir. Kendi anahtarını kullanıyorsan olası kullanım ücretleri sana aittir.</p></div>
+          </details>
+          <details>
+            <summary>Drive yedeği nasıl çalışıyor?</summary>
+            <div class="answer"><p>Google ile giriş yaptığında uygulama kelimelerinin, ilerlemenin ve ayarlarının yedeğini kendi Drive'ındaki “ArtikelMeister Cloud Sync” klasöründe tutar. Bir şey değiştirdiğinde kendiliğinden güncellenir ve cihazlarını senkron tutar. Uygulama Drive'ında yalnızca kendi oluşturduğu dosyalara erişebilir.</p></div>
+          </details>
+          <details>
+            <summary>Verilerimi nasıl silerim?</summary>
+            <div class="answer"><p>Uygulamanın ayarlarındaki “Hesap Verilerini Sil” seçeneği, Drive yedeğini ve cihazındaki verileri siler. Uygulamanın erişimini dilediğin zaman <a href="https://myaccount.google.com/permissions">Google Hesabı izinleri</a> sayfasından da kaldırabilirsin. Ayrıntılar <a href="privacy.html">gizlilik politikasında</a>.</p></div>
+          </details>
+          <details>
+            <summary>Neden Google Play'de ya da App Store'da yok?</summary>
+            <div class="answer"><p>Henüz yok. Şimdilik tüm sürümler <a href="https://github.com/kaankekec-sec/artikelmeister/releases">GitHub Releases</a> sayfasında yayımlanıyor.</p></div>
+          </details>
+          <details>
+            <summary>Windows sürümü var mı?</summary>
+            <div class="answer"><p>Planlanıyor. Önce Android (8.0 veya üstü) ve macOS (14 Sonoma veya üstü).</p></div>
+          </details>
+          <details>
+            <summary>Simge neden kanayan bir beyin?</summary>
+            <div class="answer"><p>Çünkü artikelleri ezberlemek acıtıyor. Bir kız çocuğunun, yani <span lang="de">das Mädchen</span>'in neden nötr olduğunu on dakika düşünmüş herkese sorabilirsin.</p></div>
+          </details>
+          <details>
+            <summary>Bir hata buldum. Nereye bildireyim?</summary>
+            <div class="answer"><p><a href="https://github.com/kaankekec-sec/artikelmeister/issues">GitHub</a>'da bir issue aç ya da <a href="mailto:kaankekec2727@gmail.com">kaankekec2727@gmail.com</a> adresine e-posta gönder.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <a class="brand" href="./">
+          <img src="../assets/img/logo-96.png" width="34" height="34" alt="">
+          <span>ArtikelMeister</span>
+        </a>
+        <p class="footer-made">Kaan tarafından yapıldı</p>
+        <p>MIT lisansıyla açık kaynak.</p>
+      </div>
+      <div class="footer-links">
+        <nav aria-labelledby="f-project">
+          <h2 id="f-project">Proje</h2>
+          <ul>
+            <li><a href="https://github.com/kaankekec-sec/artikelmeister">GitHub'daki kaynak kod</a></li>
+            <li><a href="https://github.com/kaankekec-sec/artikelmeister/releases">Sürümler</a></li>
+            <li><a href="https://github.com/kaankekec-sec">Kaan GitHub'da</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="f-legal">
+          <h2 id="f-legal">Yasal</h2>
+          <ul>
+            <li><a href="privacy.html">Gizlilik politikası</a></li>
+            <li><a href="terms.html">Kullanım koşulları</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>İletişim</h2>
+          <ul>
+            <li><a class="email" href="mailto:kaankekec2727@gmail.com">kaankekec2727@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found – ArtikelMeister</title>
-  <meta name="description" content="This page doesn't exist. Head back to ArtikelMeister, the flashcard app for der, die, das.">
+  <title>Page not found / Sayfa bulunamadı – ArtikelMeister</title>
+  <meta name="description" content="This page doesn't exist. Bu sayfa yok. Head back to ArtikelMeister, the flashcard app for der, die, das.">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#19221f">
   <link rel="icon" href="/artikelmeister/favicon.ico" sizes="16x16 32x32 48x48">
@@ -15,7 +15,8 @@
   <link rel="preload" href="/artikelmeister/assets/fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/artikelmeister/assets/css/site.css">
   <script>(function(){var d=document.documentElement;if(location.protocol==='file:')return;d.classList.add('js');setTimeout(function(){if(!window.__amReady)d.classList.add('no-reveal');},1200);})();</script>
-</head><body>
+</head>
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header is-scrolled">
@@ -24,14 +25,20 @@
         <img src="/artikelmeister/assets/img/logo-96.png" width="34" height="34" alt="">
         <span>ArtikelMeister</span>
       </a>
-      <nav class="nav" aria-label="Main">
-        <ul>
-          <li class="nav-optional"><a href="/artikelmeister/#how">How it works</a></li>
-          <li class="nav-optional"><a href="/artikelmeister/#demo">Try it</a></li>
-          <li class="nav-optional"><a href="/artikelmeister/#faq">FAQ</a></li>
-          <li><a class="nav-cta" href="/artikelmeister/#download">Download</a></li>
-        </ul>
-      </nav>
+      <div class="header-right">
+        <nav class="lang-switch" aria-label="Language">
+          <a href="/artikelmeister/" hreflang="en" lang="en">EN<span class="visually-hidden"> – English</span></a>
+          <a href="/artikelmeister/tr/" hreflang="tr" lang="tr">TR<span class="visually-hidden"> – Türkçe</span></a>
+        </nav>
+        <nav class="nav" aria-label="Main">
+          <ul>
+            <li class="nav-optional"><a href="/artikelmeister/#how">How it works</a></li>
+            <li class="nav-optional"><a href="/artikelmeister/#demo">Try it</a></li>
+            <li class="nav-optional"><a href="/artikelmeister/#faq">FAQ</a></li>
+            <li><a class="nav-cta" href="/artikelmeister/#download">Download</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -39,10 +46,11 @@
     <div class="wrap">
       <div>
         <h1>This page has no article. Or any content at all.</h1>
-        <p class="lost-text">The link might be old, or a letter went missing. The page you were looking for isn't here.</p>
+        <p class="lost-text">The link might be old, or a letter went missing.</p>
+        <p class="lost-text" lang="tr"><strong>Bu sayfanın artikeli yok.</strong> Hatta hiç içeriği yok. Bağlantı eski olabilir ya da bir harf kaybolmuş.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/artikelmeister/">Back to the homepage</a>
-          <a class="btn btn-ghost" href="/artikelmeister/#demo">Play the quiz instead</a>
+          <a class="btn btn-primary" href="/artikelmeister/" hreflang="en">English homepage</a>
+          <a class="btn btn-ghost" href="/artikelmeister/tr/" hreflang="tr" lang="tr">Türkçe ana sayfa</a>
         </div>
       </div>
       <div class="card-stage" aria-hidden="true">
@@ -52,7 +60,7 @@
           <span class="card-tag">Fehler 404</span>
           <div class="card-face">
             <p class="card-word" lang="de"><span class="slot" aria-hidden="true">die</span> <span>Seite</span></p>
-            <p class="card-meaning"><span lang="tr">sayfa</span> (page), not found</p>
+            <p class="card-meaning">page, <span lang="tr">sayfa</span></p>
           </div>
         </div>
       </div>
@@ -82,7 +90,7 @@
           <h2 id="f-legal">Legal</h2>
           <ul>
             <li><a href="/artikelmeister/privacy.html">Privacy policy</a></li>
-            <li><a href="/artikelmeister/terms.html">Terms</a></li>
+            <li><a href="/artikelmeister/terms.html">Terms of use</a></li>
           </ul>
         </nav>
         <div>

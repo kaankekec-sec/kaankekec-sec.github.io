@@ -7,6 +7,9 @@
   <meta name="description" content="ArtikelMeister is a free, open-source flashcard app for German noun articles. Spaced repetition, an AI word generator, CSV import and Google Drive backup. For Android and macOS.">
   <!-- Absolute URLs: base comes from site.config.json; change via tools/set-base-url.py -->
   <link rel="canonical" href="https://kaankekec-sec.github.io/artikelmeister/">
+  <link rel="alternate" hreflang="en" href="https://kaankekec-sec.github.io/artikelmeister/">
+  <link rel="alternate" hreflang="tr" href="https://kaankekec-sec.github.io/artikelmeister/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://kaankekec-sec.github.io/artikelmeister/">
   <meta name="theme-color" content="#19221f">
   <!-- <meta name="google-site-verification" content=""> -->
 
@@ -15,6 +18,8 @@
   <meta property="og:title" content="ArtikelMeister – stop guessing der, die, das">
   <meta property="og:description" content="A free, open-source flashcard app for German noun articles. For Android and macOS.">
   <meta property="og:url" content="https://kaankekec-sec.github.io/artikelmeister/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
   <meta property="og:image" content="https://kaankekec-sec.github.io/artikelmeister/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -43,6 +48,7 @@
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Android, macOS",
   "url": "https://kaankekec-sec.github.io/artikelmeister/",
+  "inLanguage": "en",
   "downloadUrl": "https://github.com/kaankekec-sec/artikelmeister/releases",
   "license": "https://opensource.org/licenses/MIT",
   "offers": {
@@ -68,14 +74,20 @@
         <img src="assets/img/logo-96.png" width="34" height="34" alt="">
         <span>ArtikelMeister</span>
       </a>
-      <nav class="nav" aria-label="Main">
-        <ul>
-          <li class="nav-optional"><a href="#how">How it works</a></li>
-          <li class="nav-optional"><a href="#demo">Try it</a></li>
-          <li class="nav-optional"><a href="#faq">FAQ</a></li>
-          <li><a class="nav-cta" href="#download">Download</a></li>
-        </ul>
-      </nav>
+      <div class="header-right">
+        <nav class="lang-switch" aria-label="Language">
+          <a href="./" hreflang="en" lang="en" aria-current="true">EN<span class="visually-hidden"> – English</span></a>
+          <a href="tr/" hreflang="tr" lang="tr">TR<span class="visually-hidden"> – Türkçe</span></a>
+        </nav>
+        <nav class="nav" aria-label="Main">
+          <ul>
+            <li class="nav-optional"><a href="#how">How it works</a></li>
+            <li class="nav-optional"><a href="#demo">Try it</a></li>
+            <li class="nav-optional"><a href="#faq">FAQ</a></li>
+            <li><a class="nav-cta" href="#download">Download</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -151,7 +163,7 @@
           <li class="reveal"><a href="#how"><h3>Smart repetition</h3><p>Words you know fade into the background. Words you keep missing come back until they stick.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
           <li class="reveal"><a href="#ai"><h3>AI word generator</h3><p>Ask Gemini for new nouns at your level, from A1 to C1, without repeats.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
           <li class="reveal"><a href="#offline"><h3>Works offline</h3><p>Study on a train with no signal. Your cards live on your device.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
-          <li class="reveal"><a href="#backup"><h3>Google Drive backup</h3><p>Sign in once and a backup in your own Drive keeps itself up to date.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
+          <li class="reveal"><a href="#backup"><h3>Google Drive backup</h3><p>Sign in once and a backup in your own Drive keeps itself up to date and your devices in sync.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
           <li class="reveal"><a href="#csv"><h3>CSV import</h3><p>Bring the vocabulary list from your course as a spreadsheet.</p><span class="go" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 2v10M3 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span></a></li>
         </ul>
       </div>
@@ -231,7 +243,7 @@
             <li><span class="w" lang="de"><span class="g-die">die</span> Besprechung</span><span class="m" lang="tr">toplantı</span></li>
             <li><span class="w" lang="de"><span class="g-der">der</span> Feierabend</span><span class="m" lang="tr">mesai bitimi</span></li>
           </ul>
-          <p class="mock-foot">An example of what one request can bring back.</p>
+          <p class="mock-foot">An example of what one request can bring back. AI can make mistakes, so give the list a quick look.</p>
         </div>
       </div>
     </section>
@@ -246,7 +258,7 @@
         </div>
         <div class="ledger" data-stagger>
           <section class="stays reveal" aria-labelledby="stays-title">
-            <h3 id="stays-title">Stays on your device</h3>
+            <h3 id="stays-title">Lives on your device</h3>
             <ul>
               <li><strong>Your words and decks</strong>, including the ones you import</li>
               <li><strong>Your progress</strong>: review dates, ratings, streak</li>
@@ -256,8 +268,8 @@
           <section class="leaves reveal" aria-labelledby="leaves-title">
             <h3 id="leaves-title">Goes online only if you use it</h3>
             <ul>
-              <li><strong>AI requests</strong> go to Google Gemini</li>
-              <li><strong>Your backup</strong> goes to your own Google Drive, once you connect Google</li>
+              <li><strong>AI requests</strong> go straight to Google Gemini: your level, the word count, an optional topic and the words you already have</li>
+              <li><strong>A backup</strong> of your words, progress and settings goes to your own Google Drive, if you sign in with Google</li>
             </ul>
           </section>
         </div>
@@ -269,12 +281,13 @@
       <div class="wrap split split--flip split--center">
         <div class="prose-block">
           <h2 id="backup-title" class="reveal">A backup in your own Google Drive</h2>
-          <p class="lead reveal">Sign in with Google and ArtikelMeister keeps a backup of your cards in your Drive.</p>
-          <p class="reveal">Change something in the app and the backup updates on its own. No “export” button to remember. It's a file in your Drive, so it stays yours.</p>
+          <p class="lead reveal">Sign in with Google and ArtikelMeister keeps a backup of your words, progress and settings in your own Drive, in a folder called “ArtikelMeister Cloud Sync”.</p>
+          <p class="reveal">Change something in the app and the backup updates on its own. Sign in with the same account on another device and your cards stay in sync. No “export” button to remember.</p>
         </div>
         <ol class="backup-strip" data-stagger role="list">
           <li class="event reveal"><span class="dot" aria-hidden="true"></span><p><strong>You add <span lang="de">die Lampe</span></strong>to the deck <span lang="tr">A1 Temel</span></p></li>
           <li class="event event--done reveal"><span class="dot" aria-hidden="true"></span><p><strong>Backup updated</strong>in your Google Drive, automatically</p></li>
+          <li class="event reveal"><span class="dot" aria-hidden="true"></span><p><strong>Your other device catches up</strong>same Google account, same cards</p></li>
         </ol>
       </div>
     </section>
@@ -375,7 +388,7 @@
             </dl>
             <button class="demo-reset" type="button" data-demo-reset hidden>Start over</button>
           </div>
-          <p class="demo-error demo-static" data-demo-static><strong>The quiz runs on the live site.</strong>It needs JavaScript and a web server. Open kaankekec-sec.github.io/artikelmeister in your browser to play.</p>
+          <p class="demo-error demo-static" data-demo-static><strong>The quiz runs on the live site.</strong>It needs JavaScript and a web server, so it can't run from a file opened on your computer.</p>
         </div>
       </div>
     </section>
@@ -400,7 +413,7 @@
           </article>
           <article class="dl reveal" aria-labelledby="dl-mac">
             <h3 id="dl-mac">macOS</h3>
-            <p class="req">macOS 13 Ventura or newer</p>
+            <p class="req">macOS 14 Sonoma or newer</p>
             <p class="file">ArtikelMeister.dmg</p>
             <ul>
               <li>Open the .dmg and move ArtikelMeister to Applications.</li>
@@ -431,15 +444,23 @@
           </details>
           <details>
             <summary>What language is the app in?</summary>
-            <div class="answer"><p>The app is in Turkish, built for Turkish speakers learning German. Meanings for AI-generated words come in Turkish too. This website is in English so more people can read it.</p></div>
+            <div class="answer"><p>The app is in Turkish, built for Turkish speakers learning German, and meanings from the AI generator come in Turkish too. This website is in English and <a href="tr/" hreflang="tr" lang="tr">Türkçe</a>.</p></div>
           </details>
           <details>
             <summary>Do I need a Google account?</summary>
-            <div class="answer"><p>No. You can study, import CSV files and track your streak without one. Google sign-in is only for the Drive backup and the AI generator, and the generator also works with your own Gemini API key.</p></div>
+            <div class="answer"><p>No. Sign-in is optional: choose <span lang="tr">“Çevrimdışı Modda Devam Et”</span> (continue offline) and you can study, import CSV files and keep your streak without one. Google sign-in is only needed for the Drive backup, and for the AI generator unless you use your own Gemini API key.</p></div>
           </details>
           <details>
             <summary>Does the AI generator cost money?</summary>
-            <div class="answer"><p>ArtikelMeister doesn't charge anything. The generator runs on your own Google account or Gemini API key, so Google's own terms and limits apply.</p></div>
+            <div class="answer"><p>ArtikelMeister itself costs nothing. The generator runs on your Google account or your own Gemini API key, so Google's terms and limits apply. If you use your own key, any usage costs are yours.</p></div>
+          </details>
+          <details>
+            <summary>How does the Drive backup work?</summary>
+            <div class="answer"><p>Once you sign in with Google, the app keeps a backup of your words, progress and settings in a folder called “ArtikelMeister Cloud Sync” in your own Drive. It updates automatically when you change something and keeps your devices in sync. The app can only access the files it created.</p></div>
+          </details>
+          <details>
+            <summary>How do I delete my data?</summary>
+            <div class="answer"><p>In the app's settings, <span lang="tr">“Hesap Verilerini Sil”</span> (delete account data) removes the Drive backup and the data on your device. You can also revoke the app's access in your <a href="https://myaccount.google.com/permissions">Google Account permissions</a>. The details are in the <a href="privacy.html">privacy policy</a>.</p></div>
           </details>
           <details>
             <summary>Why isn't it on Google Play or the App Store?</summary>
@@ -447,7 +468,7 @@
           </details>
           <details>
             <summary>Is there a Windows version?</summary>
-            <div class="answer"><p>It's planned. Android and macOS come first.</p></div>
+            <div class="answer"><p>It's planned. Android (8.0 or newer) and macOS (14 Sonoma or newer) come first.</p></div>
           </details>
           <details>
             <summary>Why is the icon a bleeding brain?</summary>
@@ -485,7 +506,7 @@
           <h2 id="f-legal">Legal</h2>
           <ul>
             <li><a href="privacy.html">Privacy policy</a></li>
-            <li><a href="terms.html">Terms</a></li>
+            <li><a href="terms.html">Terms of use</a></li>
           </ul>
         </nav>
         <div>
