@@ -105,7 +105,7 @@ function initHero() {
     slot.className = `slot is-filled a-${w.a} is-drop`;
   };
 
-  (async () => {
+  const run = async () => {
     show(words[0]);
     for (let i = 0; i < words.length; i++) {
       await wait(i === 0 ? 900 : 650);
@@ -125,7 +125,17 @@ function initHero() {
       card.classList.remove("is-settling");
     }
     if (reduceMotion()) fill(words[words.length - 1]);
-  })();
+  };
+
+  // Start only once the card is actually on screen. On phones it sits below the
+  // headline, so starting on page load meant the sequence was over before anyone saw it.
+  if (!("IntersectionObserver" in window)) { run(); return; }
+  const io = new IntersectionObserver((entries) => {
+    if (!entries.some((e) => e.isIntersecting)) return;
+    io.disconnect();
+    run();
+  }, { threshold: 0.6 });
+  io.observe(card);
 }
 
 initHeader();
